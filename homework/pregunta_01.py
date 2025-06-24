@@ -84,7 +84,7 @@ def create_visual_for_average_customer_rating(df):
     plt.savefig("docs/average_customer_rating.png")
     plt.close()
 
-def create_visual_for_weigth_distribution(df):
+def create_visual_for_weight_distribution(df):
     df = df.copy()
     plt.figure()
     df.Weight_in_gms.plot.hist(
@@ -152,7 +152,7 @@ def pregunta_01():
     create_visual_for_shipping_per_warehouse(df)
     create_visual_for_mode_of_shipment(df)
     create_visual_for_average_customer_rating(df)
-    create_visual_for_weigth_distribution(df)
+    create_visual_for_weight_distribution(df)
     write_dashboard_html()
 
 
