@@ -25,7 +25,9 @@ def create_visual_for_shipping_per_warehouse(df):
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     os.makedirs("docs", exist_ok=True)
+    os.makedirs("files/output", exist_ok=True)
     plt.savefig("docs/shipping_per_warehouse.png")
+    plt.savefig("files/output/shipping_per_warehouse.png")
     plt.close()
 
 def create_visual_for_mode_of_shipment(df):
@@ -39,6 +41,7 @@ def create_visual_for_mode_of_shipment(df):
         colors = ["tab:blue","tab:orange","tab:green"],
     )
     plt.savefig("docs/mode_of_shipment.png")
+    plt.savefig("files/output/mode_of_shipment.png")
     plt.close()
 
 def create_visual_for_average_customer_rating(df):
@@ -82,6 +85,7 @@ def create_visual_for_average_customer_rating(df):
     plt.gca().spines["right"].set_visible(False)
    
     plt.savefig("docs/average_customer_rating.png")
+    plt.savefig("files/output/average_customer_rating.png")
     plt.close()
 
 def create_visual_for_weight_distribution(df):
@@ -96,6 +100,7 @@ def create_visual_for_weight_distribution(df):
     plt.gca().spines["right"].set_visible(False)
 
     plt.savefig("docs/weight_distribution.png")
+    plt.savefig("files/output/weight_distribution.png")
     plt.close()
 
 def write_dashboard_html():
@@ -115,6 +120,8 @@ def write_dashboard_html():
 </html>
 """
     with open("docs/index.html", "w", encoding="utf-8") as f:
+        f.write(html)
+    with open("files/output/index.html", "w", encoding="utf-8") as f:
         f.write(html)
 
 def pregunta_01():
